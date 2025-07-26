@@ -1,9 +1,10 @@
 import flet as ft
+from controls import controls 
 
 
 def main(page: ft.Page):
     counter = ft.Text("0", size=50, data=0)
-
+    
     def increment_click(e):
         counter.data += 1
         counter.value = str(counter.data)
