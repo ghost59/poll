@@ -12,8 +12,8 @@ class Voter_Diplayer(ft.Column):
         '''
         self.text = ft.Text("vote")
         self.poll_input = ft.TextField( hint_text="Poll", on_change=self.textlog)
-        self._input = ft.TextField( hint_text="Poll",width=50)
-        self._input2 = ft.TextField( hint_text="Poll",width=50)
+        self._input = ft.TextField( hint_text="Poll",width=100)
+        self._input2 = ft.TextField( hint_text="Poll",width=100)
         self.display = ft.Column( controls=[self.text, self.poll_input,self._input,self._input2,ft.ElevatedButton(text="add" ,on_click=self.add)])
 
         self.controls = [self.display]
@@ -24,7 +24,7 @@ class Voter_Diplayer(ft.Column):
     def add(self,e):
         adds = vote(text=self._input.value,text2=self._input2.value)
         self.display.controls.append(adds)
-        adds.name.value = self.poll_input.value
+
         e.page.update()
 
         
